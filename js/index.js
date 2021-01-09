@@ -85,15 +85,151 @@
 
 // 14 задача
 
-
+// function isValidPassword(password) {
+//     const SAVED_PASSWORD = 'jqueryismyjam';
+//     // Пиши код ниже этой строки
+//     const isMatch = SAVED_PASSWORD === password;
+  
+//     // Пиши код выше этой строки
+//     return isMatch;
+//   }
 
 
 // 15 задача
-
+// function checkAge(age) {
+//     let message;
+  
+//     if (age >=20) { // Дополни эту строку
+//       message = 'Вы совершеннолетний человек';
+//     } else {
+//       message = 'Вы не совершеннолетний человек';
+//     }
+  
+//     return message;
+//   }
 
 // 16 задача
-
+// function checkStorage(available, ordered) {
+//     let message;
+//     // Пиши код ниже этой строки
+//   if (ordered > available) {
+//   message = 'На складе недостаточно товаров!';
+//   } else {
+//   message = 'Заказ оформлен, с вами свяжется менеджер';
+//   }
+//     // Пиши код выше этой строки
+//     return message;
+//   }
 
 // 17 задача
 
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
 
+// // Пиши код ниже этой строки
+// a+= 2;
+// b-= 4;
+// c*= 3;
+// d/= 10;
+
+
+// 18 задача
+
+// let totalPrice = pricePerDroid * orderedQuantity;
+//   if (totalPrice > customerCredits) {
+//            message = 'Недостаточно средств на счету!';
+//    }
+//   else {
+//       customerCredits -= totalPrice;
+//       message = `Вы купили ${orderedQuantity} дроидов, на счету осталось ${customerCredits} кредитов`;
+//    }
+
+  
+
+// 19 задача
+
+// function checkPassword(password) {
+//     const ADMIN_PASSWORD = 'jqueryismyjam';
+//     let message;
+  
+//     if (password ===  null ) { // Дополни эту строку
+//       message =  'Отменено пользователем!';
+//     } else if (password === ADMIN_PASSWORD) { // Дополни эту строку
+//       message = 'Добро пожаловать!';
+//     } else {
+//       message = 'Доступ запрещен, неверный пароль!';
+//     }
+  
+//     return message;
+//   }
+
+
+//   20 задача
+
+
+// function checkStorage(available, ordered) {
+//     let message;
+//     // Пиши код ниже этой строки
+//     if (ordered === 0) {
+//       message = 'В заказе еще нет товаров';
+//     } else if (ordered > available) {
+//       message = 'Слишком большой заказ, на складе недостаточно товаров!';
+//     } else {
+//       message = 'Заказ оформлен, с вами свяжется менеджер';
+//     }
+//     // Пиши код выше этой строки
+//     return message;
+//   }
+
+    // 21 задача
+     
+
+    // function isNumberInRange(start, end, number) {
+    //     const isInRange =(start<=number&&end>=number);// дополни эту строк
+      
+    //     return isInRange;
+    //   }
+
+
+    // 22 задача
+
+    // function checkIfCanAccessContent(subType) {
+    //     const canAccessContent = subType === 'pro' || subType ==='vip' ; // дополни эту строку
+      
+    //     return canAccessContent;
+    //   }
+
+
+    //            23 задача
+
+    // function isNumberNotInRange(start, end, number) {
+    //     const isInRange = number >= start && number <= end;
+    //     const isNotInRange = !isInRange ; // Дополни эту строку
+      
+    //     return isNotInRange;
+    //   }
+
+
+    // 24  задача
+
+    function getDiscount(totalSpent) {
+        const BASE_DISCOUNT = 0;
+        const BRONZE_DISCOUNT = 0.02;
+        const SILVER_DISCOUNT = 0.05;
+        const GOLD_DISCOUNT = 0.1;
+        let discount;
+        
+         if (totalSpent >= 50000) {
+       GOLD_DISCOUNT === 0.1;
+         }  if (totalSpent >= 20000 $$ 20000 <= 50000) {
+           SILVER_DISCOUNT === 0.05;
+         } if (totalSpent >= 5000 $$ totalSpent <= 20000) {
+         BRONZE_DISCOUNT === 0.02 ; 
+         } if (totalSpent <= 5000)
+           BASE_DISCOUNT === 0 ;
+      
+        
+        return discount;
+      }
