@@ -78,10 +78,52 @@
 // // Пиши код ниже этой строки
 // const lastElementIndex =fruits.length -1;
 // const lastElement = fruits[lastElementIndex] ;
+
+
+
 // задача 9
+// function getExtremeElements(array) {
+//     // Пиши код ниже этой строки
+//     return [array[0], array[array.length - 1]]
+
+
+
+//     // Пиши код выше этой строки
+//   }
 // задача 10
+// function splitMessage(message, delimeter) {
+//     let words;
+//     // Пиши код ниже этой строки
+//     words = message.split(delimeter);
+    
+    
+//     // Пиши код выше этой строки
+//     return words;
+//   }
 // задача 11
+// function calculateEngravingPrice(message, pricePerWord) {
+//     // Пиши код ниже этой строки
+    
+//     let words;
+//   words = message.split(' ');
+//     let array = words.length;
+//     let sum = pricePerWord * array;
+//     return sum;
+//     // Пиши код выше этой строки
+//   }
+
 // задача 12
+
+// function makeStringFromArray(array, delimeter) {
+//     let string;
+//     // Пиши код ниже этой строки
+   
+//     string = array.join(delimeter);
+   
+//     // Пиши код выше этой строки
+//     return string;
+//   }
+
 // задача 13 
 // задача 14
 // задача 15
