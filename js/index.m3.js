@@ -849,17 +849,204 @@
 //   }
 
 // 20 задача
+// Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
+
+// Тесты
+// Объявлена функция calculateTotalPrice(productName).
+// Вызов calculateTotalPrice('Бластер') возвращает 0.
+// Вызов calculateTotalPrice('Радар') возвращает 5200.
+// Вызов calculateTotalPrice('Дроид') возвращает 2800.
+// Вызов calculateTotalPrice('Захват') возвращает 10800.
+// Вызов calculateTotalPrice('Сканер') возвращает 8100.
+
+// const products = [
+//     { name: 'Радар', price: 1300, quantity: 4 },
+//     { name: 'Сканер', price: 2700, quantity: 3 },
+//     { name: 'Дроид', price: 400, quantity: 7 },
+//     { name: 'Захват', price: 1200, quantity: 9 },
+//   ];
+  
+//   function calculateTotalPrice(productName) {
+//     // Пиши код ниже этой строки
+  
+  
+  
+//     // Пиши код выше этой строки
+//   }
 
 
-
-
-
-
+// const products = [
+//     { name: 'Радар', price: 1300, quantity: 4 },
+//     { name: 'Сканер', price: 2700, quantity: 3 },
+//     { name: 'Дроид', price: 400, quantity: 7 },
+//     { name: 'Захват', price: 1200, quantity: 9 },
+//   ];
+  
+//   function calculateTotalPrice(productName) {
+//     // Пиши код ниже этой строки
+//   let total = 0;
+//     for (const object of products) {
+//       if ( object.name === productName) {
+//         total = object.price * object.quantity ;
+//     }
+//     }
+//   return total;
+  
+//     // Пиши код выше этой строки
+//   }
 
 // 21 задача
+// Задание
+// Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+
+// Тесты
+// Объявлена переменная highTemperatures.
+// Значение переменной highTemperatures это объект.
+// Объявлена переменная yesterday с помощью деструктуризации.
+// Значение переменной yesterday это число 28.
+// Объявлена переменная today с помощью деструктуризации.
+// Значение переменной today это число 26.
+// Объявлена переменная tomorrow с помощью деструктуризации.
+// Значение переменной tomorrow это число 33.
+// Объявлена переменная meanTemperature.
+// Значение переменной meanTemperature это число 29.
+// Используется синтаксис деструктуризации объекта highTemperatures.
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+  
+//   const yesterday = highTemperatures.yesterday;
+//   const today = highTemperatures.today;
+//   const tomorrow = highTemperatures.tomorrow;
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (yesterday + today + tomorrow) / 3;
+  
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+  
+//   const {yesterday,today,tomorrow} = highTemperatures;
+  
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (yesterday + today + tomorrow) / 3;
+  
 
 // 22 задача
+// Задание
+// В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+// Тесты
+// Объявлена переменная highTemperatures.
+// Значение переменной highTemperatures это объект.
+// Объявлена переменная highTemperatures.
+// Значение переменной highTemperatures это объект.
+// Объявлена переменная yesterday с помощью деструктуризации.
+// Значение переменной yesterday это число 28.
+// Объявлена переменная today с помощью деструктуризации.
+// Значение переменной today это число 26.
+// Объявлена переменная tomorrow с помощью деструктуризации.
+// Значение переменной tomorrow это число 33.
+// Объявлена переменная icon с помощью деструктуризации.
+// Значение переменной icon это строка 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// Используется деструктуризация объекта.
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+  
+//   const yesterday = highTemperatures.yesterday;
+//   const today = highTemperatures.today;
+//   const tomorrow = highTemperatures.tomorrow;
+//   const icon = highTemperatures.icon;
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+
+
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+//   const { yesterday,
+//      today,    
+//      tomorrow,
+//      icon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg',
+//         } = highTemperatures;
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (yesterday + today + tomorrow) / 3;
+  
+
 // 23 задача
+// Задание
+// Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+// Тесты
+// Объявлена переменная highTemperatures.
+// Значение переменной highTemperatures это объект.
+// Объявлена переменная highYesterday.
+// Значение переменной highYesterday это число 28.
+// Объявлена переменная highToday.
+// Значение переменной highToday это число 26.
+// Объявлена переменная highTomorrow.
+// Значение переменной highTomorrow это число 33.
+// Объявлена переменная highIcon.
+// Значение переменной highIcon это строка 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// Используется деструктуризация объекта.
+
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+  
+//   const highYesterday = highTemperatures.yesterday;
+//   const highToday = highTemperatures.today;
+//   const highTomorrow = highTemperatures.tomorrow;
+//   const highIcon = highTemperatures.icon;
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+
+
+
+
+
+// const highTemperatures = {
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
+//   };
+//   // Пиши код ниже этой строки
+//   const {yesterday : highYesterday,
+//   today : highToday,
+//     tomorrow : highTomorrow,      
+//    highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
+//         } = highTemperatures;
+  
+//   // Пиши код выше этой строки
+//   const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+
+
 // 24 задача
 // 25 задача
 // 26 задача
