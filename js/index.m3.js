@@ -1048,12 +1048,336 @@
 
 
 // 24 задача
+// Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+
+// Тесты
+// Объявлена переменная colors.
+// Значение переменной colors это массив.
+// Объявлена переменная hexColors.
+// Значение переменной hexColors это массив ['#f44336', '#2196f3', '#4caf50', '#ffeb3b'].
+// Объявлена переменная rgbColors.
+// Значение переменной rgbColors это массив ['244,67,54', '33,150,243', '76,175,80', '255,235,59'].
+// Для перебора массива используется цикл for...of.
+// В цикле for...of используется деструктуризация объекта.
+
+
+// const colors = [
+//     { hex: '#f44336', rgb: '244,67,54' },
+//     { hex: '#2196f3', rgb: '33,150,243' },
+//     { hex: '#4caf50', rgb: '76,175,80' },
+//     { hex: '#ffeb3b', rgb: '255,235,59' },
+//   ];
+  
+//   const hexColors = [];
+//   const rgbColors = [];
+//   // Пиши код ниже этой строки
+  
+//   for (const color of colors) {
+//     hexColors.push(color.hex);
+//     rgbColors.push(color.rgb);
+//   }
+
+
+
+
+// const colors = [
+//     { hex: '#f44336', rgb: '244,67,54' },
+//     { hex: '#2196f3', rgb: '33,150,243' },
+//     { hex: '#4caf50', rgb: '76,175,80' },
+//     { hex: '#ffeb3b', rgb: '255,235,59' },
+//   ];
+  
+//   const hexColors = [];
+//   const rgbColors = [];
+//   // Пиши код ниже этой строки
+  
+//   for (const{hex,rgb} of colors) {
+//     hexColors.push(hex);
+//     rgbColors.push(rgb);
+//   }
+  
+
 // 25 задача
+// Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+// Тесты
+// Объявлена переменная forecast.
+// Значение переменной forecast это объект.
+// Объявлена переменная highToday с помощью деструктуризации.
+// Значение переменной highToday это число 32.
+// Объявлена переменная lowToday с помощью деструктуризации.
+// Значение переменной lowToday это число 28.
+// Объявлена переменная todayIcon с помощью деструктуризации.
+// Значение переменной todayIcon это строка 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg'.
+// Объявлена переменная highTomorrow с помощью деструктуризации.
+// Значение переменной highTomorrow это число 31.
+// Объявлена переменная lowTomorrow с помощью деструктуризации.
+// Значение переменной lowTomorrow это число 27.
+// Объявлена переменная tomorrowIcon с помощью деструктуризации.
+// Значение переменной tomorrowIcon это строка 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// Используется синтаксис деструктуризации объекта highTemperatures.
+  
+// const forecast = {
+//     today: {
+//       low: 28,
+//       high: 32,
+//       icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+//     },
+//     tomorrow: {
+//       low: 27,
+//       high: 31,
+//     },
+//   };
+//   // Пиши код ниже этой строки
+  
+//   const highToday = forecast.today.high;
+//   const lowToday = forecast.today.low;
+//   const todayIcon = forecast.today.icon;
+  
+//   const highTomorrow = forecast.tomorrow.high;
+//   const lowTomorrow = forecast.tomorrow.low;
+//   const tomorrowIcon = forecast.tomorrow.icon;    
+   
+  
+
+
+
+// const forecast = {
+//     today: {
+//       low: 28,
+//       high: 32,
+//       icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+//     },
+//     tomorrow: {
+//       low: 27,
+//       high: 31,
+//     },
+//   };
+//   // Пиши код ниже этой строки
+//   const {today: 
+//       {high: highToday,low: lowToday,
+//         icon:todayIcon = 
+//       'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'},
+//    tomorrow: {high: highTomorrow, 
+//       low: lowTomorrow, 
+//       icon : tomorrowIcon = 
+//       'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'}
+//     } = forecast;
 // 26 задача
+// Задание
+// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
+
+// {
+//   today: { low: 10, high: 20 },
+//   tomorrow: { low: 20, high: 30 }
+// }
+// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
+
+// Тесты
+// Объявлена функция calculateMeanTemperature(forecast).
+// В теле функции используется деструктуризация объекта.
+// В теле функции объявлена переменная todayHigh с помощью деструктуризации.
+// В теле функции объявлена переменная todayLow с помощью деструктуризации.
+// В теле функции объявлена переменная tomorrowLow с помощью деструктуризации.
+// В теле функции объявлена переменная tomorrowHigh с помощью деструктуризации.
+// Вызов calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }) возвращает 28.5.
+// Вызов calculateMeanTemperature({ today: {low: 37, high: 40}, tomorrow: {low: 33, high: 38} }) возвращает 37.
+
+
+// // Пиши код ниже этой строки
+// function calculateMeanTemperature(forecast) {
+//     const todayLow = forecast.today.low;
+//     const todayHigh = forecast.today.high;
+//     const tomorrowLow = forecast.tomorrow.low;
+//     const tomorrowHigh = forecast.tomorrow.high;
+  
+//     // Пиши код выше этой строки
+//     return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+//   }
+  
+
+
+
+
+// // Пиши код ниже этой строки
+// function calculateMeanTemperature(forecast) {
+//     const {today: {low:todayLow, high : todayHigh},   
+//      tomorrow: {low: tomorrowLow, high: tomorrowHigh}}=
+//     forecast;
+  
+//     // Пиши код выше этой строки
+//     return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+//   }
+  
+
 // 27 задача
+// Задание
+// В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий.
+
+// Тесты
+// Объявлена переменная scores.
+// Значение переменной scores это массив [89, 64, 42, 17, 93, 51, 26].
+// Объявлена переменная bestScore.
+// Значение переменной bestScore это число 93.
+// Объявлена переменная worstScore.
+// Значение переменной worstScore это число 17.
+// Для передачи аргументов методу Math.max() используется синтаксис ... на массиве scores.
+// Для передачи аргументов методу Math.min() используется синтаксис ... на массиве scores.
+
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Пиши код ниже этой строки
+// const bestScore = scores;
+// const worstScore = scores;
+
+
+
+
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Пиши код ниже этой строки
+// const bestScore = (Math.max(...scores));
+// const worstScore =(Math.min(...scores));
+
+
 // 28 задача
+// Задание
+// В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
+
+// В переменной allScores хранился массив всех результатов от первой до третьей группы.
+// В переменной bestScore был самый высокий общий балл.
+// В переменной worstScore был самый низкий общий балл.
+// Тесты
+// Объявлена переменная firstGroupScores.
+// Значение переменной firstGroupScores это массив [64, 42, 93].
+// Объявлена переменная secondGroupScores.
+// Значение переменной secondGroupScores это массив [89, 14, 51, 26].
+// Объявлена переменная thirdGroupScores.
+// Значение переменной thirdGroupScores это массив [29, 47, 18, 97, 81].
+// Объявлена переменная allScores.
+// Значение переменной allScores это массив [64, 42, 93, 89, 14, 51, 26, 29, 47, 18, 97, 81].
+// Объявлена переменная bestScore.
+// Значение переменной bestScore это число 97.
+// Объявлена переменная worstScore.
+// Значение переменной worstScore это число 14.
+// При присвоении значения переменной allScores использовался синтаксис ... для заполнения массива.
+// Для передачи аргументов методу Math.max() используется синтаксис ... на массиве allScores.
+// Для передачи аргументов методу Math.min() используется синтаксис ... на массиве allScores.
+
+
+
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Пиши код ниже этой строки
+// const allScores = [];
+// const bestScore = allScores;
+// const worstScore = allScores;
+
+
+
+
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Пиши код ниже этой строки
+// const allScores = [...firstGroupScores,...secondGroupScores,...thirdGroupScores];
+// const bestScore = (Math.max(...allScores));
+// const worstScore =(Math.min(...allScores));
+
 // 29 задача
+// Задание
+// В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
+
+// Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста.
+
+// Тесты
+// Объявлена переменная defaultSettings.
+// Значение переменной defaultSettings это объект.
+// Объявлена переменная overrideSettings.
+// Значение переменной overrideSettings это объект.
+// Объявлена переменная finalSettings.
+// Значение переменной finalSettings это объект.
+// Значение свойства finalSettings.theme равно 'light'.
+// Значение свойства finalSettings.public равно 'false'.
+// Значение свойства finalSettings.withPassword равно 'true'.
+// Значение свойства finalSettings.minNumberOfQuestions равно 10.
+// Значение свойства finalSettings.timePerQuestion равно 30.
+// При присваивании значения переменной finalSettings используется синтаксис ....
+
+// const defaultSettings = {
+//     theme: 'light',
+//     public: true,
+//     withPassword: false,
+//     minNumberOfQuestions: 10,
+//     timePerQuestion: 60,
+//   };
+//   const overrideSettings = {
+//     public: false,
+//     withPassword: true,
+//     timePerQuestion: 30,
+//   };
+//   // Пиши код ниже этой строки
+//   const finalSettings = {};
+
+
+
+
+
+// const defaultSettings = {
+//     theme: 'light',
+//     public: true,
+//     withPassword: false,
+//     minNumberOfQuestions: 10,
+//     timePerQuestion: 60,
+//   };
+//   const overrideSettings = {
+//     public: false,
+//     withPassword: true,
+//     timePerQuestion: 30,
+//   };
+//   // Пиши код ниже этой строки
+//   const finalSettings = {...defaultSettings,...overrideSettings};
 // 30 задача
+// Задание
+// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+
+// text - текст задачи.
+// category - категория задачи.
+// priority - приоритет задачи.
+// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
+
+// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
+
+// Тесты
+// Объявлена функция makeTask(data).
+// Вызов makeTask({}) возвращает { category: 'Общее', priority: 'Обычный', completed: false }.
+// Вызов makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор' }) возвращает { category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор', completed: false }.
+// Вызов makeTask({ category: 'Финансы', text: 'Забрать проценты' }) возвращает { category: 'Финансы', priority: 'Обычный', text: 'Забрать проценты', completed: false }.
+// Вызов makeTask({ priority: 'Низкий', text: 'Выбрать шампунь' }) возвращает { category: 'Общее', priority: 'Низкий', text: 'Выбрать шампунь', completed: false }.
+// Вызов makeTask({ text: 'Купить хлеб' }) возвращает { category: 'Общее', priority: 'Обычный', text: 'Купить хлеб', completed: false }.
+
+
+// function makeTask(data) {
+//     const completed = false;
+//     const category = 'Общее';
+//     const priority = 'Обычный';
+//     // Пиши код ниже этой строки
+  
+//     // Пиши код выше этой строки
+//   }
+
+
+
+
+
+// function makeTask(data) {
+//     const completed = false;
+//     const category = 'Общее';
+//     const priority = 'Обычный';
+//     // Пиши код ниже этой строки
+//   const newTask = {completed:completed,category:category,priority:priority,...data};
+//     return newTask;
+//     // Пиши код выше этой строки
+//   }
 
 // 31 задача
 // 32 задача
