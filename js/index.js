@@ -378,6 +378,6 @@
       //  result = message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale');
       //   // Пиши код выше этой строки
       //   return result;
-      }
+      
       
      
