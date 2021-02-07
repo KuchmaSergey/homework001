@@ -231,41 +231,680 @@
 //   }
 
 // задача 6
+// Задание
+// Напиши функцию-конструктор Storage, которая будет создавать объекты для управления складом товаров. Функция ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
 
-// function User({ name, email }) {
-//     this.name = name;
-//     this.email = email;
+// Добавь методы на прототип:
+
+// getItems() - возвращает массив текущих товаров в свойстве items объекта, который вызывает этот метод.
+// addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта, который вызывает этот метод.
+// removeItem(item) - принимает товар item и удаляет его из массива товаров в свойстве items объекта, который вызывает этот метод.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в тойпоследовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// Тесты
+// Объявлена функция Storage(items).
+// Вызов Storage.prototype.hasOwnProperty('getItems') возвращает true.
+// Вызов Storage.prototype.hasOwnProperty('addItem') возвращает true.
+// Вызов Storage.prototype.hasOwnProperty('removeItem') возвращает true.
+// В результате вызова new Storage([ 'Нанитоиды', 'Пролонгер', 'Антигравитатор' ]) значение переменной storage это объект.
+// Вызов Storage.prototype.isPrototypeOf(storage) возвращает true.
+// У объекта storage есть свойство items.
+// Первый вызов storage.getItems(), сразу после инциализации экземпляра, возвращает массив ["Нанитоиды", "Пролонгер", "Антигравитатор"].
+// Второй вызов, storage.getItems(), после вызова storage.addItem('Дроид'), возвращает массив ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"].
+// Третий вызов storage.getItems(), после вызова storage.removeItem('Пролонгер'), возвращает массив ["Нанитоиды", "Антигравитатор", "Дроид"].
+
+
+
+
+// // Пиши код выше этой строки
+// const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// storage.addItem('Дроид');
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem('Пролонгер');
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+
+
+
+
+// function Storage(items) {
+//     this.items = items;
+//   };
+//   Storage.prototype.getItems = function () {
+//   return this.items;
 //   }
-  
-//   User.prototype.getEmail = function () {
-//     return this.email;
+//   Storage.prototype.addItem = function (newItem) {
+//   this.items.push(newItem);
+//   }
+//   Storage.prototype.removeItem = function (item) {
+//   const itemIndex = this.items.indexOf(item);
+//     this.items.splice(itemIndex, 1)
 //   };
-  
-//   User.prototype.changeEmail = function (newEmail) {
-//     this.email = newEmail;
-//   };
-  
-//   const mango = new User({ name: 'Манго', email: 'mango@mail.com' });
-  
-//   console.log(mango.getEmail()); // mango@mail.com
-//   mango.changeEmail('mango@supermail.com');
-//   console.log(mango.getEmail()); // mango@supermail.com
-
-
-
+//   // Пиши код выше этой строки
+//   const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+//   storage.addItem('Дроид');
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+//   storage.removeItem('Пролонгер');
+//   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
 
 // задача 7
+// Задание
+// Напиши функцию-конструктор StringBuilder, которая принимает один параметр baseValue - произвольную строку, которая записывается на создаваемый объект в свойство value.
+
+// Добавь методы на прототип:
+
+// getValue() - возвращает текущее значение свойства value.
+// padEnd(str) - получает парметр str (строку) и добавляет её в конец значения свойства value объекта, который вызывает этот метод.
+// padStart(str) - получает парметр str (строку) и добавляет её в начало значения свойства value объекта, который вызывает этот метод.
+// padBoth(str) - получает парметр str (строку) и добавляет её в начало и в конец значения свойства value объекта, который вызывает этот метод.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// Тесты
+// Объявлена функция StringBuilder(baseValue).
+
+// Вызов StringBuilder.prototype.hasOwnProperty('getValue') возвращает true.
+
+// Вызов StringBuilder.prototype.hasOwnProperty('padEnd') возвращает true.
+
+// Вызов StringBuilder.prototype.hasOwnProperty('padStart') возвращает true.
+
+// Вызов StringBuilder.prototype.hasOwnProperty('padBoth') возвращает true.
+
+// В результате вызова new StringBuilder('.') значение переменной builder это объект.
+
+// Вызов StringBuilder.prototype.isPrototypeOf(builder) возвращает true.
+
+// У объекта builder есть свойство value.
+
+// Первый вызов builder.getValue(), сразу после инциализации экземпляра, возвращает строку '.'.
+
+// Второй вызов builder.getValue(), после вызова builder.padStart('^'), возвращает строку '^.'.
+
+// Третий вызов builder.getValue(), после вызова builder.padEnd('^'), возвращает строку '^.^'.
+
+// Четвёртый вызов builder.getValue(), после вызова builder.padBoth('='), возвращает строку '=^.^='.
+
+
+
+
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
+
+
+
+
+
+
+// function StringBuilder(baseValue) {
+//     this.value = baseValue;
+//   };
+//   StringBuilder.prototype.getValue = function () {
+//   return this.value;
+//   };
+//   StringBuilder.prototype.padStart = function (str) {
+//   this.value = str + this.value;
+//     return str;
+//   };
+//   StringBuilder.prototype.padEnd = function (str) {
+//   this.value += str;
+//     return ;
+//   };
+//   StringBuilder.prototype.padBoth = function (str) {
+//   this.value = str + this.value + str;
+//     return ;
+//   };
+
+
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
+
+
+
 // задача 8
+// Задание
+// Используя ключевое слово class объяви класс Car с пустым телом.
+
+// Тесты
+// Объявлен класс Car с пустым телом.
+// Результат вызова new Car() это пустой объект.
+
+
+// class Car {}
+
+
 // задача 9
+// Задание
+// Выполни рефакторинг кода, заменив функцию-конструктор Car на класс с методом-конструктором, принимающим объект.
+
+// Тесты
+// Объявлен класс Car.
+// Конструктор класса принимает объект со свойствами brand, model и price.
+// В результате вызова new Car({ brand: 'Audi', model: 'Q3', price: 36000 }) получится объект { brand: 'Audi', model: 'Q3', price: 36000 }.
+// В результате вызова new Car({ brand: 'BMW', model: 'X5', price: 58900 }) получится объект { brand: 'BMW', model: 'X5', price: 58900 }.
+// В результате вызова new Car({ brand: 'Nissan', model: 'Murano', price: 31700 }) получится объект { brand: 'Nissan', model: 'Murano', price: 31700 }.
+
+
+
+// function Car({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+  
+
+
+
+
+
+
+// class Car {
+//     brand;
+//     model;
+//     price;
+//      constructor({brand,model,price}) {
+//        this.brand = brand;
+//       this.model = model;
+//       this.price = price;
+   
+//    }
+//    }
+
 // задача 10
+// Задание
+// Добавь классу Car две метода.
+
+// getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+// changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+// Тесты
+// Объявлен класс Car.
+// Конструктор класса принимает объект со свойствами brand, model и price.
+// Вызов Car.prototype.hasOwnProperty('getPrice') возвращает true.
+// Значение Car.prototype.getPrice это функция.
+// Вызов Car.prototype.hasOwnProperty('changePrice') возвращает true.
+// Значение Car.prototype.changePrice это функция.
+// У объекта, созданного вызовом new Car({ brand: 'Audi', model: 'Q3', price: 36000 }), вызов метода getPrice() вернет число 36000.
+// У объекта, созданного вызовом new Car({ brand: 'Audi', model: 'Q3', price: 36000 }), вызов метода changePrice(35000) и последующем вызове getPrice() вернет число 35000.
+
+
+// class Car {
+//     constructor({ brand, model, price }) {
+//       this.brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//   }
+  
+
+
+
+
+
+
+// class Car {
+//     constructor({ brand, model, price }) {
+//       this.brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//     getPrice() {
+//     return this.price;
+//     }
+//     changePrice(newPrice) {
+//     this.price= newPrice;
+//     }
+//   }
 // задача 11
+// Задание
+// Выполни рефакторинг класса Car так, чтобы свойство brand было приватным и добавь два метода для публичного интерфейса, для чтения и изменения этого свойства.
+
+// getBrand() - возвращает значение приватного свойства brand.
+// changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand.
+// Тесты
+// Объявлен класс Car.
+// Свойство brand в классе Car объявлено приватным.
+// Конструктор класса принимает объект со свойствами brand, model и price.
+// В результате вызова new Car({ brand: 'Audi', model: 'Q3', price: 36000 }) получится объект { model: 'Q3', price: 36000 }.
+// В результате вызова new Car({ brand: 'BMW', model: 'X5', price: 58900 }) получится объект { model: 'X5', price: 58900 }.
+// В результате вызова new Car({ brand: 'Nissan', model: 'Murano', price: 31700 }) получится объект { model: 'Murano', price: 31700 }.
+// У экземпляра нет публичного свойства brand.
+// Метод getBrand() возвращает значение приватного свойства brand.
+// Метод changeBrand('Honda') изменяет значение приватного свойства brand на 'Honda'.
+
+
+
+// class Car {
+//     constructor({ brand, model, price }) {
+//       this.brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//   }
+   
+   
+
+  
+// class Car {
+//     #brand;
+    
+//     constructor({ brand, model, price }) {
+//       this.#brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+//     getBrand() {
+//       return this.#brand;
+//     }
+//     changeBrand(newBrand) {
+//       this.#brand =newBrand;
+//     }
+//   }
+
+
+
 // задача 12
+// Задание
+// Выполни рефакторинг заменив функцию-конструктор Storage на класс с методами. Сделай так, чтобы свойство items было приватным.
+
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// Тесты
+// Объявлен класс Storage.
+// Свойство items в классе Storage объявлено приватным.
+// Конструктор класса принимает свойство items.
+// Вызов Storage.prototype.hasOwnProperty('getItems') возвращает true.
+// Вызов Storage.prototype.hasOwnProperty('addItem') возвращает true.
+// Вызов Storage.prototype.hasOwnProperty('removeItem') возвращает true.
+// В результате вызова new Storage([ 'Нанитоиды', 'Пролонгер', 'Антигравитатор' ]) значение переменной storage это объект.
+// Вызов Storage.prototype.isPrototypeOf(storage) возвращает true.
+// У объекта storage нет свойства items.
+// Первый вызов storage.getItems(), сразу после инциализации экземпляра, возвращает массив ["Нанитоиды", "Пролонгер", "Антигравитатор"].
+// Второй вызов, storage.getItems(), после вызова storage.addItem('Дроид'), возвращает массив ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"].
+// Третий вызов storage.getItems(), после вызова storage.removeItem('Пролонгер'), возвращает массив ["Нанитоиды", "Антигравитатор", "Дроид"].
+
+
+
+
+// function Storage(items) {
+//     this.items = items;
+//   }
+  
+//   Storage.prototype.getItems = function () {
+//     return this.items;
+//   };
+  
+//   Storage.prototype.addItem = function (newItem) {
+//     this.items.push(newItem);
+//   };
+  
+//   Storage.prototype.removeItem = function (item) {
+//     const itemIndex = this.items.indexOf(item);
+//     this.items.splice(itemIndex, 1);
+//   };
+  
+//   // Пиши код выше этой строки
+//   const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+//   storage.addItem("Дроид");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+//   storage.removeItem("Пролонгер");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+  
+
+
+
+// class Storage {
+//     #items;
+//     constructor (items) {
+//       this.#items =items;
+//   }
+  
+//   getItems () {
+//     return this.#items;
+//   };
+  
+//   addItem (newItem) {
+//     this.#items.push(newItem);
+//   };
+  
+//   removeItem (item) {
+//     const itemIndex = this.#items.indexOf(item);
+//     this.#items.splice(itemIndex, 1);
+//   };
+//   }
+//   // Пиши код выше этой строки
+//   const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+//   storage.addItem("Дроид");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+//   storage.removeItem("Пролонгер");
+//   console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+
+
+
 // задача 13
+// Задание
+// Выполни рефакторинг заменив функцию-конструктор StringBuilder на класс с методами. Сделай так, чтобы свойство value было приватным.
+
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// Тесты
+// Объявлен класс StringBuilder.
+// Свойство value в классе StringBuilder объявлено приватным.
+// Вызов StringBuilder.prototype.hasOwnProperty('getValue') возвращает true.
+// Вызов StringBuilder.prototype.hasOwnProperty('padEnd') возвращает true.
+// Вызов StringBuilder.prototype.hasOwnProperty('padStart') возвращает true.
+// Вызов StringBuilder.prototype.hasOwnProperty('padBoth') возвращает true.
+// В результате вызова new StringBuilder('.') значение переменной builder это объект.
+// Вызов StringBuilder.prototype.isPrototypeOf(builder) возвращает true.
+// У объекта builder нет свойства value.
+// Первый вызов builder.getValue(), сразу после инциализации экземпляра, возвращает строку '.'.
+// Второй вызов builder.getValue(), после вызова builder.padStart('^'), возвращает строку '^.'.
+// Третий вызов builder.getValue(), после вызова builder.padEnd('^'), возвращает строку '^.^'.
+// Четвёртый вызов builder.getValue(), после вызова builder.padBoth('='), возвращает строку '=^.^='.
+
+
+
+// function StringBuilder(baseValue) {
+//     this.value = baseValue;
+//   }
+  
+//   StringBuilder.prototype.getValue = function () {
+//     return this.value;
+//   };
+  
+//   StringBuilder.prototype.padEnd = function (str) {
+//     this.value += str;
+//   };
+  
+//   StringBuilder.prototype.padStart = function (str) {
+//     this.value = str + this.value;
+//   };
+  
+//   StringBuilder.prototype.padBoth = function (str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   };
+  
+//   // Пиши код выше этой строки
+//   const builder = new StringBuilder('.');
+//   console.log(builder.getValue()); // '.'
+//   builder.padStart('^');
+//   console.log(builder.getValue()); // '^.'
+//   builder.padEnd('^');
+//   console.log(builder.getValue()); // '^.^'
+//   builder.padBoth('=');
+//   console.log(builder.getValue()); // '=^.^='
+
+
+
+
+
+// class StringBuilder {
+//     #value
+//     constructor (baseValue){
+//     this.#value = baseValue;
+//   }
+  
+//   getValue () {
+//     return this.#value;
+//   };
+  
+//   padEnd (str) {
+//     this.#value += str;
+//   };
+  
+//   padStart (str) {
+//     this.#value = str + this.#value;
+//   };
+  
+//   padBoth (str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   };
+//   }
+//   // Пиши код выше этой строки
+//   const builder = new StringBuilder('.');
+//   console.log(builder.getValue()); // '.'
+//   builder.padStart('^');
+//   console.log(builder.getValue()); // '^.'
+//   builder.padEnd('^');
+//   console.log(builder.getValue()); // '^.^'
+//   builder.padBoth('=');
+//   console.log(builder.getValue()); // '=^.^='
+
+
+
 // задача 14
+// Задание
+// Выполни рефакторинг класса Car. Сделай свойства model и price приватными, также как #brand. Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры и сеттеры brand, model и price для взаимодействия с приватными свойствами.
+
+// Тесты
+// Объявлен класс Car.
+// В классе Car объявлено приватное свойство brand.
+// В классе Car объявлено приватное свойство model.
+// В классе Car объявлено приватное свойство price.
+// Конструктор класса принимает объект со свойствами brand, model и price.
+// В классе Car объявлен геттер brand.
+// В классе Car объявлен сеттер brand.
+// В классе Car объявлен геттер model.
+// В классе Car объявлен сеттер model.
+// В классе Car объявлен геттер price.
+// В классе Car объявлен сеттер price.
+
+
+
+
+// class Car {
+//     model;
+//     price;
+//     #brand;
+  
+//     constructor({ brand, model, price }) {
+//       this.#brand = brand;
+//       this.model = model;
+//       this.price = price;
+//     }
+  
+//     getBrand() {
+//       return this.#brand;
+//     }
+  
+//     changeBrand(newBrand) {
+//       this.#brand = newBrand;
+//     }
+  
+//     getModel() {
+//       return this.model;
+//     }
+  
+//     updateModel(newModel) {
+//       this.model = newModel;
+//     }
+  
+//     getPrice() {
+//       return this.price;
+//     }
+  
+//     setPrice(newPrice) {
+//       this.price = newPrice;
+//     }
+//   }
+  
+
+
+
+
+// class Car {
+//     #model;
+//     #price;
+//     #brand;
+  
+//     constructor({ brand, model, price }) {
+//       this.#brand = brand;
+//       this.#model = model;
+//       this.#price = price;
+//     }
+  
+//     get brand() {
+//       return this.#brand;
+//     }
+  
+//     set brand(newBrand) {
+//       this.#brand = newBrand;
+//     }
+  
+//     get model() {
+//       return this.#model;
+//     }
+  
+//     set model(newModel) {
+//       this.#model = newModel;
+//     }
+  
+//     get price() {
+//       return this.#price;
+//     }
+  
+//     set price(newPrice) {
+//       this.#price = newPrice;
+//     }
+//   }
+  
+
 // задача 15
+// Задание
+// Выполни рефакторинг класса Car. Добавь публичное статическое свойство MAX_PRICE со значением 50000 - максимально допустимая цена автомобиля.
+
+// Добавь сеттеру price проверку передаваемого значения параметра newPrice. Если оно больше чем MAX_PRICE, сеттер ничего не делает, а если меньше или равно, то перезаписывает цену автомобиля.
+
+// Тесты
+// Объявлен класс Car.
+// У класса Car есть статическое свойство MAX_PRICE.
+// Значение статического свойства MAX_PRICE это число 50000.
+// У экземпляра нет свойства MAX_PRICE.
+// В классе Car объявлен геттер price.
+// В классе Car объявлен сеттер price.
+// У экземпляра класса Car вызов сеттера price, со значением аргумента меньше чем значение MAX_PRICE, изменяет свойство #price.
+// У экземпляра класса Car вызов сеттера price, со значением аргумента больше чем значение MAX_PRICE, не изменяет свойство #price.
+
+
+// class Car {
+//     // Пиши код ниже этой строки
+//     static MAX_PRICE = 10000;
+//     #price;
+  
+//     constructor({ price }) {
+//       this.#price = price;
+//     }
+  
+//     get price() {
+//       return this.#price;
+//     }
+  
+//     set price(newPrice) {
+//       this.#price = newPrice;
+//     }
+//     // Пиши код выше этой строки
+//   }
+  
+//   const audi = new Car({price: 35000});
+//   console.log(audi.price); // 35000
+  
+//   audi.price = 49000;
+//   console.log(audi.price); // 49000
+  
+//   audi.price = 51000;
+//   console.log(audi.price); // 49000
+
+
+
+
+
+//   class Car {
+//     // Пиши код ниже этой строки
+//     static MAX_PRICE = 50000;
+//     #price;
+  
+//     constructor({ price }) {
+//       this.#price = price;
+//     }
+  
+//     get price() {
+//       return this.#price;
+//     }
+  
+//     set price(newPrice) {
+//       if (newPrice <= Car.MAX_PRICE)
+//       this.#price = newPrice;
+//     }
+//     // Пиши код выше этой строки
+//   }
+  
+//   const audi = new Car({price: 35000});
+//   console.log(audi.price); // 35000
+  
+//   audi.price = 49000;
+//   console.log(audi.price); // 49000
+  
+//   audi.price = 51000;
+//   console.log(audi.price); // 49000
+
 // задача 16
+// Задание
+// Добавь классу Car публичный статический метод checkPrice(price), принимающий цену автомобиля. Метод должен сравнить значения параметра price и приватного статического свойства MAX_PRICE.
+
+// Если цена автомобиля превышает максимальную, метод должен вернуть строку 'Внимание! Цена превышает допустимую.'.
+// В противном случае метод должен вернуть строку 'Всё хорошо, цена в порядке.'.
+// Под объявлением класса мы добавили инициализацию экземпляра и вызовы методов, чтобы показать как будет использоваться метод checkPrice(price).
+
+// Тесты
+// Объявлен класс Car.
+// У класса Car есть статический метод checkPrice(price).
+// Вызов Car.checkPrice(36000) возвращает строку 'Всё хорошо, цена в порядке.'.
+// Вызов Car.checkPrice(18000) возвращает строку 'Всё хорошо, цена в порядке.'.
+// Вызов Car.checkPrice(64000) возвращает строку 'Внимание! Цена превышает допустимую.'.
+// Вызов Car.checkPrice(57000) возвращает строку 'Внимание! Цена превышает допустимую.'.
+
+// class Car {
+//     static #MAX_PRICE = 50000;
+//     // Пиши код ниже этой строки
+  
+//     // Пиши код выше этой строки
+//     constructor({ price }) {
+//       this.price = price;
+//     }
+//   }
+  
+//   const audi = new Car({ price: 36000 });
+//   const bmw = new Car({ price: 64000 });
+  
+//   console.log(Car.checkPrice(audi.price)); // Всё хорошо, цена в порядке.
+//   console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
+
+
+
+
+
+
+
+
 // задача 17
 // задача 18
 // задача 19
