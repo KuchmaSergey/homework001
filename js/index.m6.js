@@ -1244,9 +1244,77 @@
 
 
 
-
+// const names = [...books]
+// .filter(book => book.rating >= MIN_BOOK_RATING)
+// .map(book => book.author)
+// .sort((a,b) => a.localeCompare(b));
   
-  // задача 41
-  // задача 43
-  // задача 44
+  // задача 42
+//   Задание
+//   Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала массив имён пользователей отсортированный по возрастанию количества их друзей (свойство friends).
+  
+//   Тесты
+//   Объявлена переменная getNamesSortedByFriendCount.
+//   Переменной getNamesSortedByFriendCount присвоена стрелочная функция с параметром (users).
+//   В теле функции используется цепочка методов.
+//   Значение параметра users не изменяется.
+//   Вызов функции с указанным массивом пользователей возвращает массив ['Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Sheree Anthony', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson'].
+//   Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
 
+
+// // Пиши код ниже этой строки
+// const getNamesSortedByFriendCount = users => {
+   
+// };
+// // Пиши код выше этой строки
+
+
+
+// // Пиши код ниже этой строки
+// const getNamesSortedByFriendCount = users => {
+//   return [...users] .sort((a,b) => a.friends.length - b.friends.length).map (user => user.name)
+// };
+// // Пиши код выше этой строки
+
+  // задача 43
+//   Задание
+//   Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту .
+  
+//   Тесты
+//   Объявлена переменная getSortedFriends.
+//   Переменной getSortedFriends присвоена стрелочная функция с параметром (users).
+//   В теле функции используется цепочка методов в правильном порядке.
+//   Значение параметра users не изменяется.
+//   Вызов функции с указанным массивом пользователей возвращает массив ['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong', 'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman', 'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron Pace', 'Solomon Fokes'].
+//   Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
+
+// // Пиши код ниже этой строки
+// const getSortedFriends = users => {
+   
+// };
+// // Пиши код выше этой строки
+
+
+
+// // Пиши код ниже этой строки
+// const getSortedFriends = users => {
+//   return users
+//   .flatMap(user => user.friends)
+//   .filter((friend,index,array) => array.indexOf(friend) === index) 
+//   .sort((a,b) => a.localeCompare(b)) 
+// };
+// // Пиши код выше этой строки
+
+
+
+//  44
+
+
+// // Пиши код ниже этой строки
+// const getTotalBalanceByGender = (users, gender) => {
+//   return users
+//  .filter(user => user.gender === gender)
+//  .reduce((total, user) => total + user.balance,0)
+// };
+// // Пиши код выше этой строки
